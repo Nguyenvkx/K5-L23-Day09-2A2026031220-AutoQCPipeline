@@ -17,8 +17,8 @@ TODO(học viên): vì sao `05_review_queue.csv` xếp ảnh đầu hàng như v
 ## 3. Calibration (2 ngưỡng)
 | Tham số | Khởi đầu | Đã chọn | Precision / Recall (trước → sau) | Lý do (đánh đổi) |
 |---|---|---|---|---|
-| `duplicates.phash_dist` | 2 | TODO(học viên) | | |
-| `second_opinion.conf` | 0.25 | TODO(học viên) | | |
+| `duplicates.phash_dist` | 2 | 16 | 1.00 / 0.50 -> 1.00 / 0.83|Bắt 5/6 thay vì 3/6 lỗi gần trùng, chưa tăng FP trên calib |
+| `second_opinion.conf` | 0.25 | 0.6 | Sai lớp: 0.56 / 0.83 -> 0.62 / 0.83; thiếu nhãn: 0.50 / 1.00 -> 0.57 / 1.00; box lỏng: 0.29 / 0.40 -> 0.20 / 0.20|Ưu tiên giữ recall thiếu nhãn và cải thiện precision, chấp nhận bỏ sót thêm box lỏng |
 
 TODO(học viên): **một chỗ calibration có thể đánh lừa bạn**, kèm bằng chứng từ dữ liệu của bạn (vd. mở xem vài cặp ảnh bị cho là trùng; số ảnh bị loại ở bước 1 có hợp lý không?).
 
